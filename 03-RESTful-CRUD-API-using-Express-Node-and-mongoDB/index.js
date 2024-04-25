@@ -1,11 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import bodyParser from "body-parser";
+import route from "./routes/userRoute.js";
+
 
 const app = express();
-dotenv.config();
 
-const PORT = process.env.PORT || 7000;
+app.use(bodyParser.json());
+dotenv.config();
+const PORT = process.env.PORT || 5000;
 const MONGOURL = process.env.MONGO_URL;
 
 mongoose
@@ -18,14 +22,17 @@ mongoose
   })
   .catch((error) => console.log("error"));
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-});
+// const userSchema = new mongoose.Schema({
+//   name: String,
+//   age: Number,
+// });
 
-const UserModel = mongoose.model("users", userSchema);
+// const UserModel = mongoose.model("users", userSchema);
 
-app.get("/getUsers", async (req, res) => {
-  const userData = await UserModel.find();
-  res.json(userData);
-});
+// app.get("/api/user", async (req, res) => {
+//   const userData = await UserModel.find();
+//   res.json(userData);
+// }
+// );
+
+app.use("/api/user", route);
