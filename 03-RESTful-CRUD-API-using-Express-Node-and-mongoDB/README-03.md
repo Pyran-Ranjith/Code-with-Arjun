@@ -42,10 +42,11 @@ MONGO_URL = "mongodb://localhost:27017/curd"
 - create a new file userRoute.js by name
 ### Check API with Postman
 - go to Pastman (local)
+### Create new record
 - creat new collection by name 
   - 03-RESTful-CRUD-API-using-Express-Node-and-mongoDB"
-- create a post request by name
-  - http://localhost:8000/api/user/create
+- create a Get request 'Create new record' by name
+  - http://localhost:8000/api/user/getAllUsers
 - press Body/JSON and enter following json cript
 ````
 {
@@ -55,8 +56,28 @@ MONGO_URL = "mongodb://localhost:27017/curd"
 }
 ````
 - press Send button
-
-
+### Get All Users
+- create a Get request by name 'Get All Users'
+  - http://localhost:8000/api/user/getAllUsers
+- press Send button
+- OUTPUT
+````
+    {
+        "_id": "662b444ff8a7d3799d913681",
+        "name": "Ranjith",
+        "email": "ranjith@gmail.com",
+        "address": "Sri Lanka",
+        "__v": 0
+    },
+    {
+        "_id": "662b5f118dc8a13180ebfceb",
+        "name": "Mahinda",
+        "email": "mahinda@gmail.com",
+        "address": "Sri Lanka",
+        "__v": 0
+    },
+    ....
+````
 ### To see the web output
 [web output](http://localhost:8000/api/user/create)
 ````
