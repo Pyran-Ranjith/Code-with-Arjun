@@ -40,9 +40,24 @@ MONGO_URL = "mongodb://localhost:27017/curd"
 - create a new file userController.js by name
 - create a new folder routes by name
 - create a new file userRoute.js by name
+### Check API with Postman
+- go to Pastman (local)
+- creat new collection by name 
+  - 03-RESTful-CRUD-API-using-Express-Node-and-mongoDB"
+- create a post request by name
+  - http://localhost:8000/api/user/create
+- press Body/JSON and enter following json cript
+````
+{
+    "name":"Ranjith",
+    "email":"ranjith@gmail.com",
+    "address":"Sri Lanka"
+}
+````
+- press Send button
+
 
 ### To see the web output
-[web output](http://localhost:8000/api/user/fetch)
+[web output](http://localhost:8000/api/user/create)
 ````
-"Hello World"
 ````
